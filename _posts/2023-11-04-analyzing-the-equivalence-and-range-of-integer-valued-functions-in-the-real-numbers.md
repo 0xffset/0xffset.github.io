@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Analyzing the Equivalence and Range of Integer-Valued Functions in the Real Numbers"
-date:   2023-11-03
+date:   2023-11-04
 categories: math
 tags: [math]
 ---
