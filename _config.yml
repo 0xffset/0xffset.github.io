@@ -22,7 +22,7 @@ title: ROGGER.
 description: Academic blog of Rogger.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  roleyder
+github_username:  0xffset
 
 # Build settings
 markdown: kramdown
