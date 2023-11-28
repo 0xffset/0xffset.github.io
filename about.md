@@ -5,7 +5,7 @@ permalink: /about/
 theme: minima
 ---
 
-I am 21-year-old and undergraduate student in computer science. I am interested in computer science and mathematics stuff such as theorical computer science, cryptography, machine learning, and quantum computing. 
+I am 21-year-old undergraduate student in computer science. I am interested in computer science and mathematics stuff such as theorical computer science, cryptography, machine learning, and quantum computing. 
 
 Some keywords of skills:
 
