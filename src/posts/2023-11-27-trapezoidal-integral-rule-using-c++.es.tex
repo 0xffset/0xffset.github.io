@@ -1,0 +1,76 @@
+\title{Regla de la Integral Trapezoidal Usando C++}
+\author{0xffset}
+\date{2023-11-27}
+\begin{document}
+\maketitle
+
+\section{Idea}
+
+Partiendo de la interpretación geométrica de la integral definida, como el área neta con signo limitada por el integrando $f(x)$, el eje x y las líneas verticales $x=a$ y $x=b$, el enfoque más simple para un algoritmo de cuadratura práctico es reemplazar el gráfico del integrando por una línea poligonal definida por un número finito de valores del integrando para sumar las áreas trapezoidales formadas.
+
+Para muestrear el intervalo de integración $[a,b]$ de forma uniforme, se pueden elegir puntos equidistantes, 
+
+\begin{equation*}
+    x_i = a + (i -1)h, i = 1,2,...,n
+\end{equation*}
+
+definidos por el espaciamiento 
+
+\begin{equation*}
+    h = (b - a)/(n-1)
+\end{equation*}
+
+\begin{trapezoidalplot}
+\end{trapezoidalplot}
+
+El gráfico del integrando se aproxima mediante los segmentos de recta que conectan los puntos ($x_i$, $f_i$). 
+Reemplazando las integrales parciales en cada uno de los $(n-1)$ subintervalos $(x_i, x_{i+1})$ por las áreas trapezoidales correspondientes, la integral se aproxima mediante
+
+\begin{equation*}
+\int_a^b f(x)\,dx \approx \frac{h}{2}(f_1 + f_2) + \cdots + \frac{h}{2}(f_i+f_{i+1}) + \cdots + \frac{h}{2}(f_{n-1} + f_n)
+\end{equation*}
+
+y, agrupando aún más los términos, se obtiene la regla trapezoidal 
+
+\begin{equation}
+    \int_a^b f(x)\,dx \approx h \left[ \frac{h_1}{2} + \sum_{i=2}^{n-1} f_i + \frac{f_n}{2} \right]
+\end{equation}
+
+\section{Código}
+\begin{verbatim}
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+double Func(double x)
+{
+    return (x * x * x) * exp(-x);
+}
+
+double Trapezoidal(double (*Func)(double ), double a, double b, int n)
+{
+    auto h = (b - a) / (n - 1);
+    auto s = 0.5 * (Func(a) + Func(b));
+    for (int i = 0; i < n - 1; ++i)
+    {
+        s += Func(a + i * h);
+    }
+    return h * s;
+}
+
+int main(int argc, char const *argv[])
+{
+    double a = 0.0, b = 1.0;
+    int n = 100;
+    cout << "I = " << Trapezoidal(Func, a, b, n) << endl;
+    return 0;
+}
+\end{verbatim}
+
+Para evaluar la integral de prueba 
+
+\begin{equation*}
+    \int_0^1 x^3 e^{-x}\,dx = 0.113935
+\end{equation*}
+
+\end{document}

@@ -1,0 +1,76 @@
+
+:root{color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#161513;--fg:#e6e1d6;--dim:#968f80;--ac:#e0a458;--ln:#3a3730}
+html{background:var(--bg);scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.65 'Latin Modern Roman','Computer Modern',Georgia,'Times New Roman',serif;counter-reset:s f r}
+body.es .en,body.en .es{display:none}
+main{max-width:720px;margin:0 auto;padding:60px 24px 90px;position:relative}
+.lg{position:absolute;right:24px;top:22px;font-size:15px;color:var(--dim)}
+.lg button{background:none;border:0;color:var(--dim);font:inherit;cursor:pointer;padding:0 3px}
+.lg button.on{color:var(--fg);text-decoration:underline;text-underline-offset:4px}
+header{text-align:center;margin-bottom:34px}
+h1{font-size:clamp(32px,7vw,46px);font-weight:400;margin:14px 0 6px;letter-spacing:-.01em}
+header .sub{font-style:italic;color:var(--dim)}
+header .ct{margin-top:10px;font-size:16px}
+a{color:var(--ac);text-decoration:none;border-bottom:1px solid transparent}a:hover{border-color:var(--ac)}
+p{text-align:justify;hyphens:auto;margin:0 0 14px}
+.ab{margin:0 auto 30px;max-width:600px;font-size:16.5px}
+.ab h3{text-align:center;font-size:16px;margin:0 0 6px;font-weight:700}
+.kw{font-size:15px;color:var(--dim);text-align:left}
+h2{font-size:22px;margin:44px 0 14px;font-weight:700;counter-increment:s}
+h2::before{content:counter(s) "\2003"}
+.th{border-left:2px solid var(--ln);padding-left:16px;margin:26px 0}
+.th i{font-style:italic}.th .pf{font-size:16px;color:var(--dim);margin:6px 0 0}
+.it{margin-bottom:16px}
+.h{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.d{color:var(--dim);font-size:15px;font-variant-numeric:tabular-nums}
+.it p{margin:2px 0 0;font-size:16.5px;color:#c9c3b5}
+ol.ref{padding:0;margin:0;list-style:none}
+ol.ref li{counter-increment:r;padding-left:38px;position:relative;margin-bottom:10px;font-size:17px}
+ol.ref li::before{content:"[" counter(r) "]";position:absolute;left:0;color:var(--dim)}
+ol.ref i{color:var(--dim)}
+figure{margin:30px 0;padding:0}
+.fr{border-top:1px solid var(--ln);border-bottom:1px solid var(--ln);position:relative}
+figcaption{font-size:15px;color:var(--dim);margin-top:8px;text-align:justify}
+body.es figcaption::before{content:"Figura " counter(f) ". ";font-weight:700;color:var(--fg)}
+body.en figcaption::before{content:"Figure " counter(f) ". ";font-weight:700;color:var(--fg)}
+figure{counter-increment:f}
+#lz,#lf{display:block;width:100%}
+#lz{height:340px;cursor:grab;touch-action:pan-y}
+#lf{image-rendering:pixelated;cursor:crosshair;touch-action:none}
+.ctl{font-size:14px;margin-top:6px}.ctl button{background:none;border:0;border-bottom:1px solid var(--ln);color:var(--ac);font:inherit;cursor:pointer;margin-right:14px;padding:0}
+table{width:100%;border-collapse:collapse;border-top:2px solid var(--fg);border-bottom:2px solid var(--fg);font-size:16px}
+thead td,tr:first-child td{padding-top:8px}
+td{padding:5px 0;vertical-align:top}td:first-child{width:130px;font-style:italic;color:var(--dim);padding-right:12px}
+tr+tr td{border-top:1px solid var(--ln)}
+ul.pl{padding-left:20px;margin:0}ul.pl li{margin-bottom:6px;font-size:17px}
+footer{margin-top:60px;border-top:1px solid var(--ln);padding-top:16px;font-size:14px;color:var(--dim);display:flex;justify-content:space-between}
+.po{margin-bottom:16px}.po a{font-weight:700}.po p{margin:2px 0 0;font-size:16.5px;color:#c9c3b5}
+.more{font-size:16px;margin-top:6px}
+.ng{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px;margin-top:6px}
+.nt{background:none;border:0;padding:0;text-align:left;color:inherit;font:inherit;cursor:zoom-in;position:relative}
+.nt img{display:block;width:100%;aspect-ratio:600/780;object-fit:cover;border:1px solid var(--ln);transition:.25s}
+.nt:hover img{transform:translateY(-3px) rotate(-.6deg);border-color:var(--ac)}
+.nt .cap{display:block;font-size:14px;color:var(--dim);margin-top:6px;line-height:1.35}.cap i{display:block;font-size:13px}
+.nt.ph::after{content:"sample";position:absolute;top:8px;right:8px;background:#161513;color:var(--dim);font-size:11px;padding:1px 7px;border:1px solid var(--ln)}
+body.es .nt.ph::after{content:"ejemplo"}
+#lbx{position:fixed;inset:0;background:rgba(10,10,9,.95);z-index:20;display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
+#lbx.o{display:flex}#lbx img{max-width:100%;max-height:100%;border:1px solid var(--ln)}
+.up{color:var(--ac);border-bottom:1px solid var(--ln);cursor:pointer}
+.bdg{font-size:12px;color:var(--dim);border:1px solid var(--ln);padding:0 6px;margin-left:8px;font-weight:400}
+.rdr{border:1px solid var(--ln);padding:22px 24px;margin:16px 0}.rdr[hidden]{display:none}
+.rx{float:right;background:none;border:0;color:var(--ac);font:inherit;font-size:14px;cursor:pointer}
+.rdr .rtt{font-size:24px;font-weight:700;line-height:1.25}.rdr .rm{color:var(--dim);font-size:15px;margin-bottom:14px}
+.rdr h3{font-size:19px;margin:22px 0 8px}.rdr h4{font-size:17px;margin:16px 0 6px;font-style:italic}
+.rdr pre{background:#1d1c19;border:1px solid var(--ln);padding:12px;overflow-x:auto;font-size:14px;line-height:1.5;margin:0 0 14px}
+.rdr code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em}
+.rdr .thm{font-style:italic}.rdr .thm b{font-style:normal}.rdr .th.pf{color:var(--dim);font-size:16px}
+.rdr mjx-container{max-width:100%;overflow-x:auto;overflow-y:hidden}
+.rdr ul,.rdr ol{margin:0 0 14px}
+@media(max-width:600px){body{font-size:17px}td:first-child{width:96px}.lg{right:16px}main{padding:56px 18px 70px}}
+
+nav.top{display:flex;gap:22px;margin-bottom:30px;font-size:16px}
+nav.top a{color:var(--dim);border-bottom:1px solid transparent}nav.top a.on,nav.top a:hover{color:var(--fg);border-color:var(--ac)}
+.pg h1{font-size:34px;font-weight:400;margin:0 0 6px}.pg .sub2{color:var(--dim);margin:0 0 24px}
+.back{font-size:15px;display:inline-block;margin-bottom:14px}
+.empty{color:var(--dim);font-style:italic}

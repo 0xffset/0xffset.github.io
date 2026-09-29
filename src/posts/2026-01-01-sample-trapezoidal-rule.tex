@@ -1,0 +1,25 @@
+\title{Trapezoidal Rule}
+\author{Rogger García Díaz}
+\date{Sample}
+\begin{document}
+\maketitle
+\section{Idea}
+Approximate $\int_a^b f(x)\,dx$ by the polyline through the points $(x_i, f(x_i))$ and add the areas of the \textbf{trapezoids}:
+\begin{equation}
+\int_a^b f(x)\,dx \approx \frac{h}{2}\Big[f(x_0)+2\sum_{i=1}^{n-1}f(x_i)+f(x_n)\Big],\qquad h=\frac{b-a}{n}.
+\end{equation}
+\begin{theorem}
+If $f\in C^2[a,b]$, then $|E|\le \dfrac{(b-a)\,h^2}{12}\max_{[a,b]}|f''|$.
+\end{theorem}
+\begin{proof}
+Apply the interpolation error on each subinterval and sum over $i$.
+\end{proof}
+\section{Code}
+\begin{verbatim}
+double trap(F f, double a, double b, int n) {
+  double h = (b - a) / n, s = 0.5 * (f(a) + f(b));
+  for (int i = 1; i < n; ++i) s += f(a + i * h);
+  return s * h;
+}
+\end{verbatim}
+\end{document}
