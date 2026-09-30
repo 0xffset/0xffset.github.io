@@ -11,7 +11,7 @@ export function CvTop() {
         <h3><span className="es">Resumen</span><span className="en">Abstract</span></h3>
         <p className="es">Ingeniero de software y de datos con experiencia en análisis, pipelines ETL, aplicaciones orientadas a datos y machine learning. Trabajo con Python, SQL, Spark, Airflow y Kafka, sobre una base sólida de matemáticas, algoritmos y criptografía.</p>
         <p className="en">Software and data engineer with experience in analytics, ETL pipelines, data-driven applications and machine learning. I work with Python, SQL, Spark, Airflow and Kafka, on a solid foundation of mathematics, algorithms and cryptography.</p>
-        <p className="kw"><i><span className="es">Palabras clave:</span><span className="en">Keywords:</span></i> ETL, <span className="es">criptografía, álgebra lineal, sistemas distribuidos</span><span className="en">cryptography, linear algebra, distributed systems</span></p>
+        <p className="kw"><i><span className="es">Palabras clave:</span><span className="en">Keywords:</span></i> ETL, <span className="es">criptografía, álgebra lineal, cálculo, sistemas distribuidos</span><span className="en">cryptography, linear algebra, calculus, distributed systems</span></p>
       </div>
 
 

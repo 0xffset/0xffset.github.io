@@ -5,12 +5,6 @@ import { posts, notes, isSample, postTitle, noteTitle } from './content'
 const Bi = ({ es, en }: { es: string; en: string }) => (<><span className="es">{es}</span><span className="en">{en}</span></>)
 const Sample = () => <span className="bdg"><Bi es="ejemplo" en="sample" /></span>
 
-const OLD = [
-  ['2023-11-27', 'Trapezoidal Integral Rule Using C++', 'math/2023/11/27/trapezoidal-integral-rule-using-c++.html'],
-  ['2023-11-04', 'Analyzing the Equivalence and Range of Integer-Valued Functions in the Real Numbers', 'math/2023/11/04/analyzing-the-equivalence-and-range-of-integer-valued-functions-in-the-real-numbers.html'],
-  ['2023-11-02', 'Exploring the Intersection of Topology and Quantum Computing', 'math/2023/11/02/exploring-the-intersection-of-topology-and-quantum-computing.html'],
-]
-
 export function PostList({ lang }: { lang: Lang }) {
   return (
     <div className="pg">
@@ -21,10 +15,7 @@ export function PostList({ lang }: { lang: Lang }) {
           <div className="h"><span><a href={`#/posts/${p.slug}`}>{postTitle(p.src, lang, p.slug)}</a>{isSample(p.slug) && <Sample />}</span><span className="d">{p.date}</span></div>
         </div>
       ))}
-      <h2><Bi es="Blog anterior" en="Previous blog" /></h2>
-      {OLD.map(([d, t, u]) => (
-        <div className="po" key={u}><div className="h"><a href={`https://0xffset.github.io/${u}`} target="_blank" rel="noopener">{t}</a><span className="d">{d}</span></div></div>
-      ))}
+
     </div>
   )
 }
@@ -33,10 +24,8 @@ export function PostView({ slug, lang }: { slug: string; lang: Lang }) {
   const p = posts.find((x) => x.slug === slug)
   if (!p) return <p className="empty"><a href="#/posts">← Posts</a></p>
 
-  // Seleccionamos el texto fuente en español o inglés según el estado 'lang'
-  const currentTexSrc = p.src[lang] 
+  const currentTexSrc = p.src[lang]
 
-  // Pasamos el texto correcto al parser
   const r = texToHtml(currentTexSrc, lang)
 
   return (
@@ -44,7 +33,7 @@ export function PostView({ slug, lang }: { slug: string; lang: Lang }) {
       <a className="back" href="#/posts">← <Bi es="Todos los posts" en="All posts" /></a>
       <article className="rdr">
         <div className="rtt">{r.title}</div>
-        <div className="rm"> <Bi es="Posted" en="Publicado" />  ·  {r.date}</div>
+        <div className="rm"> <Bi es="Publicado" en="Posted" />  ·  {r.date}</div>
         <div dangerouslySetInnerHTML={{ __html: r.html }} />
       </article>
     </div>
